@@ -72,7 +72,7 @@ m_ques=[{
 h_ques = [
     {
         "question": "How many faces does a sphere have?\n\n A.Two \n B.Three \n C.One \n D.Five\n\n",
-        "answer": "C"
+        # "answer": "C" See if it works
     },
     {
         "question": "What is the capital of France?\n\n A.Paris \n B.London \n C.Rome \n D.Madrid\n\n",
