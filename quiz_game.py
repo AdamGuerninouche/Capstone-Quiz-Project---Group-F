@@ -70,8 +70,7 @@ m_ques=[{
 
 
 # Questions and answers for HARD
-hard
-e_ques = [{
+h_ques = [{
         "question": "What is Joe Biden's middle name?\n\n A.Smith \n B.Robinette \n C.John \n D.Matthew\n\n",
         "answer": "B"
     },
