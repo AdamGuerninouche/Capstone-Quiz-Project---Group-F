@@ -72,63 +72,51 @@ m_ques=[{
 hard
 e_ques = [
     {
-        "question":
-        "What is Joe Biden's middle name?\n\n A.Smith \n B.Robinette \n C.John \n D.Matthew\n\n",
+        "question": "What is Joe Biden's middle name?\n\n A.Smith \n B.Robinette \n C.John \n D.Matthew\n\n",
         "answer": "B"
     },
     {
-        "question":
-        "What is the smallest city in England?\n\n A.Liverpool \n B.Canterbury \n C.Newcastle \n D.City of London\n\n",
+        "question": "What is the smallest city in England?\n\n A.Liverpool \n B.Canterbury \n C.Newcastle \n D.City of London\n\n",
         "answer": "D"
     },
     {
-        "question":
-        "Luanda is the capital city of which country?\n\n A.Nigeria \n B.Angola \n C.Ivory Coast \n D.Cuba  \n\n",
+        "question": "Luanda is the capital city of which country?\n\n A.Nigeria \n B.Angola \n C.Ivory Coast \n D.Cuba  \n\n",
         "answer": "B"
     },
     {
-        "question":
-        "Who has the most instagram followers?\n\n A.Kim Kardashian \n B.Elon Musk \n C.Cristiano Ronaldo \n D.Donald Trump  \n\n",
+        "question": "Who has the most instagram followers?\n\n A.Kim Kardashian \n B.Elon Musk \n C.Cristiano Ronaldo \n D.Donald Trump  \n\n",
         "answer": "C"
     },
     {
-        "question":
-        "What year did Vincent Van Gogh die?\n\n A.1890 \n B.1879 \n C.1900 \n D.1905  \n\n",
+        "question": "What year did Vincent Van Gogh die?\n\n A.1890 \n B.1879 \n C.1900 \n D.1905  \n\n",
         "answer": "A"
     },
     {
-        "question":
-        "How many time zones are there is Russia?\n\n A.11 \n B.3 \n C.5 \n D.9  \n\n",
+        "question": "How many time zones are there is Russia?\n\n A.11 \n B.3 \n C.5 \n D.9  \n\n",
         "answer": "A"
     },
     {
-        "question":
-        "Where in the human body would you find the medulla oblongata?\n\n A.The mouth \n B.The lungs \n C.The stomach \n D.The brain \n\n",
+        "question": "Where in the human body would you find the medulla oblongata?\n\n A.The mouth \n B.The lungs \n C.The stomach \n D.The brain \n\n",
         "answer": "D"
     },
     {
-        "question":
-        "How many languages has Harry Potter been translated into?\n\n A.200 \n B.68 \n C.20 \n D.100  \n\n",
+        "question": "How many languages has Harry Potter been translated into?\n\n A.200 \n B.68 \n C.20 \n D.100  \n\n",
         "answer": "B"
     },
     {
-        "question":
-        "Where is the oldest tree in the world located?\n\n A.California \n B.Marseille \n C.Lima \n D.Cape Town  \n\n",
+        "question": "Where is the oldest tree in the world located?\n\n A.California \n B.Marseille \n C.Lima \n D.Cape Town  \n\n",
         "answer": "C"
     },
     {
-        "question":
-        "Who designed the eiffel tower?\n\n A.Edgar Degas\n B.Camille Pissaro \n C.Gustave Eiffel \n D.Victor-Marie Hugo \n\n",
+        "question": "Who designed the eiffel tower?\n\n A.Edgar Degas\n B.Camille Pissaro \n C.Gustave Eiffel \n D.Victor-Marie Hugo \n\n",
         "answer": "C"
     },
     {
-        "question":
-        "How big is the diameter of a basketball hoop in inches?\n\n A.18 \n B.24 \n C.12 \n D.8 \n\n",
+        "question" : "How big is the diameter of a basketball hoop in inches?\n\n A.18 \n B.24 \n C.12 \n D.8 \n\n",
         "answer": "A"
     },
     {
-        "question":
-        "What do you call a group of bears?\n\n A.Tribe \n B.Troop \n C.Cartload \n D.Sloth \n\n",
+        "question" : "What do you call a group of bears?\n\n A.Tribe \n B.Troop \n C.Cartload \n D.Sloth \n\n",
         "answer": "D"
     },
 ]
