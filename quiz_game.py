@@ -2,9 +2,9 @@
 wlcm_mssg = "Hello and Welcome to The Capstone Quiz Game! \n\nPick: A, B, C, or D for the answer you think is right! \n "
 print(wlcm_mssg)
 
+
 # Questions and answers for EASY
-e_ques = [
-    {
+e_ques = [{
         "question": "How many faces does a sphere have?\n\n A.Two \n B.Three \n C.One \n D.Five\n\n",
         "answer": "C"
     },
@@ -27,8 +27,8 @@ e_ques = [
     {
         "question": "What is the main language spoken in Brazil?\n\n A.Spanish \n B.Portuguese \n C.French \n D.English\n\n",
         "answer": "B"
-    },
-]
+    },]
+
 
 # Questions and answers for MEDIUM
 m_ques=[{
@@ -68,10 +68,10 @@ m_ques=[{
         "answer": "C"
     },]
 
+
 # Questions and answers for HARD
 hard
-e_ques = [
-    {
+e_ques = [{
         "question": "What is Joe Biden's middle name?\n\n A.Smith \n B.Robinette \n C.John \n D.Matthew\n\n",
         "answer": "B"
     },
@@ -118,9 +118,7 @@ e_ques = [
     {
         "question" : "What do you call a group of bears?\n\n A.Tribe \n B.Troop \n C.Cartload \n D.Sloth \n\n",
         "answer": "D"
-    },
-]
-####
+    },]
 
 # Variables for calculating EASY score
 earn_per_R_ans = 50
