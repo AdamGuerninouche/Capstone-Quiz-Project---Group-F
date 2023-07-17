@@ -1,10 +1,15 @@
+import time
+import threading
+
+
+
 # Initial Welcome Message
 wlcm_mssg = "Hello and Welcome to The Capstone Quiz Game! \n\nPick: A, B, C, or D for the answer you think is right! \n "
 print(wlcm_mssg)
 
-
 # Questions and answers for EASY
-e_ques = [{
+e_ques = [
+    {
         "question": "How many faces does a sphere have?\n\n A.Two \n B.Three \n C.One \n D.Five\n\n",
         "answer": "C"
     },
@@ -27,8 +32,8 @@ e_ques = [{
     {
         "question": "What is the main language spoken in Brazil?\n\n A.Spanish \n B.Portuguese \n C.French \n D.English\n\n",
         "answer": "B"
-    },]
-
+    },
+]
 
 # Questions and answers for MEDIUM
 m_ques=[{
@@ -68,56 +73,69 @@ m_ques=[{
         "answer": "C"
     },]
 
-
 # Questions and answers for HARD
-h_ques = [{
-        "question": "What is Joe Biden's middle name?\n\n A.Smith \n B.Robinette \n C.John \n D.Matthew\n\n",
+h_ques = [
+    {
+        "question":
+        "What is Joe Biden's middle name?\n\n A.Smith \n B.Robinette \n C.John \n D.Matthew\n\n",
         "answer": "B"
     },
     {
-        "question": "What is the smallest city in England?\n\n A.Liverpool \n B.Canterbury \n C.Newcastle \n D.City of London\n\n",
+        "question":
+        "What is the smallest city in England?\n\n A.Liverpool \n B.Canterbury \n C.Newcastle \n D.City of London  \n\n",
         "answer": "D"
     },
     {
-        "question": "Luanda is the capital city of which country?\n\n A.Nigeria \n B.Angola \n C.Ivory Coast \n D.Cuba  \n\n",
+        "question":
+        "Luanda is the capital city of which country?\n\n A.Nigeria \n B.Angola \n C.Ivory Coast \n D.Cuba  \n\n",
         "answer": "B"
     },
     {
-        "question": "Who has the most instagram followers?\n\n A.Kim Kardashian \n B.Elon Musk \n C.Cristiano Ronaldo \n D.Donald Trump  \n\n",
+        "question":
+        "Who has the most instagram followers?\n\n A.Kim Kardashian \n B.Elon Musk \n C.Cristiano Ronaldo \n D.Donald Trump  \n\n",
         "answer": "C"
     },
     {
-        "question": "What year did Vincent Van Gogh die?\n\n A.1890 \n B.1879 \n C.1900 \n D.1905  \n\n",
+        "question":
+        "What year did Vincent Van Gogh die?\n\n A.1890 \n B.1879 \n C.1900 \n D.1905  \n\n",
         "answer": "A"
     },
     {
-        "question": "How many time zones are there is Russia?\n\n A.11 \n B.3 \n C.5 \n D.9  \n\n",
+        "question":
+        "How many time zones are there is Russia?\n\n A.11 \n B.3 \n C.5 \n D.9  \n\n",
         "answer": "A"
     },
     {
-        "question": "Where in the human body would you find the medulla oblongata?\n\n A.The mouth \n B.The lungs \n C.The stomach \n D.The brain \n\n",
+        "question":
+        "Where in the human body would you find the medulla oblongata?\n\n A.The mouth \n B.The lungs \n C.The stomach \n D.The brain \n\n",
         "answer": "D"
     },
     {
-        "question": "How many languages has Harry Potter been translated into?\n\n A.200 \n B.68 \n C.20 \n D.100  \n\n",
+        "question":
+        "How many languages has Harry Potter been translated into?\n\n A.200 \n B.68 \n C.20 \n D.100  \n\n",
         "answer": "B"
     },
     {
-        "question": "Where is the oldest tree in the world located?\n\n A.California \n B.Marseille \n C.Lima \n D.Cape Town  \n\n",
+        "question":
+        "Where is the oldest tree in the world located?\n\n A.California \n B.Marseille \n C.Lima \n D.Cape Town  \n\n",
         "answer": "C"
     },
     {
-        "question": "Who designed the eiffel tower?\n\n A.Edgar Degas\n B.Camille Pissaro \n C.Gustave Eiffel \n D.Victor-Marie Hugo \n\n",
+        "question":
+        "Who designed the eiffel tower?\n\n A.Edgar Degas\n B.Camille Pissaro \n C.Gustave Eiffel \n D.Victor-Marie Hugo \n\n",
         "answer": "C"
     },
     {
-        "question" : "How big is the diameter of a basketball hoop in inches?\n\n A.18 \n B.24 \n C.12 \n D.8 \n\n",
+        "question":
+        "How big is the diameter of a basketball hoop in inches?\n\n A.18 \n B.24 \n C.12 \n D.8 \n\n",
         "answer": "A"
     },
     {
-        "question" : "What do you call a group of bears?\n\n A.Tribe \n B.Troop \n C.Cartload \n D.Sloth \n\n",
+        "question":
+        "What do you call a group of bears?\n\n A.Tribe \n B.Troop \n C.Cartload \n D.Sloth \n\n",
         "answer": "D"
-    },]
+    },
+]
 
 # Variables for calculating EASY score
 earn_per_R_ans = 50
@@ -128,21 +146,60 @@ earn_per_M_ans = 100
 # Variables for calculating HARD score
 earn_per_H_ans = 150
 
+# Variable to track whether the player has answered or not
 
+# Variable to track whether the player has answered or not
+answered = False
+current_question = 0
+
+def ask_next_question():
+    global current_question, answered
+    current_question += 1
+    answered = False
+
+# Function to handle the timer
+def timer_func():
+    global answered, current_question 
+    remaining_time = 10
+    while remaining_time > 0:
+        print(f"\nTime remaining: {remaining_time} seconds")
+      
+        time.sleep(1)
+
+        remaining_time -= 1
+        if answered:
+            return
+    if not answered:
+        print("\nTime's up!")
+        current_question += 1
+        print("Moving to the next question...")
+        ask_next_question()
+        # Add any additional actions you want to perform when time's up
+        # For example, marking the question as incorrect
+    
+    answered = False
 while True:
     difficulty = input("Choose your difficulty: EASY, MEDIUM, or HARD\n\n")
     if difficulty.lower() == "EASY".lower():
         i_d = input("Please type in your name for the leaderboard: \n\n")
         r_ans = 0
-
-        for i in range(5):
-            ans = input("\n" + e_ques[i] ["question"])
-            if ans.lower() == str(e_ques[i]["answer"]).lower():
+        
+        for current_question in range(5):
+            # Start the timer thread for each question
+            timer_thread = threading.Thread(target=timer_func)
+            timer_thread.start()
+            
+            ans = input("\n" + e_ques[current_question] ["question"])
+            answered = True
+            if ans.lower() == str(e_ques[current_question]["answer"]).lower():
                 print("\n" + "Well Done! That is correct!\n")
                 r_ans += 1
+
             else:
                 print("\n" + "Ohh :( Unfortunately, that is incorrect!\n")
-
+            timer_thread.join()
+            current_question += 1
+            ask_next_question()
         print(f"You scored {r_ans * earn_per_R_ans} out of a potential 300!\n\nWill you beat your score next time?")
     
 
@@ -184,14 +241,22 @@ while True:
     elif difficulty.lower() == "MEDIUM".lower():
         i_d = input("Please type in your name for the leaderboard: \n\n")
         r_ans = 0
+         
+        for current_question in range(5):
+             # Start the timer thread for each question
+            timer_thread = threading.Thread(target=timer_func)
+            timer_thread.start()
 
-        for i in range(5):
-            ans = input("\n" + m_ques[i]["question"])
-            if ans.lower() == str(m_ques[i]["answer"]).lower():
+            ans = input("\n" + m_ques[current_question]["question"])
+            answered = True
+            if ans.lower() == str(m_ques[current_question]["answer"]).lower():
                 print("\n" + "Well Done! That is correct!\n")
                 r_ans += 1
             else:
                 print("\n" + "Ohh :( Unfortunately, that is incorrect!\n")
+            timer_thread.join()
+            current_question += 1
+            ask_next_question()
 
         print(f"You scored {r_ans * earn_per_M_ans} out of a potential 900!\n\nWill you beat your score next time?")
     
@@ -235,13 +300,20 @@ while True:
         i_d = input("Please type in your name for the leaderboard: \n\n")
         r_ans = 0
 
-        for i in range(5):
-            ans = input("\n" + h_ques[i]["question"])
-            if ans.lower() == str(h_ques[i]["answer"]).lower():
+        for current_answer in range(5):
+            timer_thread = threading.Thread(target=timer_func)
+            timer_thread.start()
+            ans = input("\n" + h_ques[current_question]["question"])
+            answered = True
+            if ans.lower() == str(h_ques[current_question]["answer"]).lower():
                 print("\n" + "Well Done! That is correct!\n")
                 r_ans += 1
+
             else:
                 print("\n" + "Ohh :( Unfortunately, that is incorrect!\n")
+            timer_thread.join()
+            current_question += 1
+            ask_next_question()
 
         print(f"You scored {r_ans * earn_per_H_ans} out of a potential 1800!\n\nWill you beat your score next time?")
     
